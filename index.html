@@ -158,6 +158,34 @@
         <a href="mailto:lani.apriliani321@gmail.com"><i class="fa-solid fa-envelope"></i></a> lani.apriliani321@gmail.com</li>
  </section>
 
+<!-- Formulir Kontak -->
+<section id="formulir-kontak" class="contact-form-section container">
+  <h3>Hubungi Kami</h3>
+  <form id="fake-contact-form">
+    <div class="form-group">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="form-button">Kirim</button>
+  </form>
+</section>
+
+ <script>
+  document.getElementById("fake-contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Mencegah reload
+    alert("Pesan berhasil dikirim!");
+    this.reset(); // Mengosongkan form
+  });
+</script>   
+    
  <!-- Footer -->
   <footer>
     <div class="container">
