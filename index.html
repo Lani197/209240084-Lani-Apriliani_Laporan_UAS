@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body id="beranda">
     
     <!-- medsos -->
@@ -15,17 +16,26 @@
             <ul>
                 <li><a href="https://wa.me/qr/3DNOSOIAEUKHO1"><i class="fa-brands fa-whatsapp"></i></a></li>
                 <li><a href="https://www.instagram.com/k.clovers?igsh=ZHZja3dieDk2MmFw"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#keranjang"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <div class="cart">
+                <li>
+                  <a href="keranjang.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                  </a>
+                </li>
+              </div>
             </ul>
         </div>
      </div>
+
+     
 
     <!-- Header -->
      <header>
         <div class="container header-container">
          <div class="logo-wrapper">
             <img src="gambar/logo.jpeg" alt="Logo Clover" class="logo-img">
-            <h1 class="logo-text"><a href="#beranda">Clover Keychain</a></h1>
+            <h1 class="logo-text"><a href="#beranda">Clover Accessories</a></h1>
          </div>
     <!-- Hamburger icon -->
          <div class="menu-toggle" id="menu-toggle">
@@ -38,7 +48,6 @@
             <li><a href="#produk">Produk</a></li>
             <li><a href="#kontak">Kontak</a></li>
         </ul>
-        </div>
      </header>
 
 <!-- Tengtang Kami -->
@@ -49,7 +58,7 @@
     </div>
     <div class="about-text">
     <h3>Tentang Kami</h3>
-    <p>Gantungan kunci berbahan dasar kawat bulu premium.</p>
+    <p>Aksesoris Kekinia berbahan dasar kawat bulu premium.</p>
     <p>Memiliki berbagai bentuk dan variasi yang lucu-lucu.</p>
     <P>Dapat disesuaikan dengan keinginan dan selera anda.</P>
     <p>100% buatan tangan dan dibuat dengan penuh ketelitian.</p>
@@ -63,64 +72,90 @@
         <h3>Produk</h3>           
         <section class="product-list">
             <div class="product">
-                <img src="gambar/1.jpg" alt="Tulip Keychain">
-                <h2>Tulip Keychain</h2>
-                <p> Rp. 3000</p>
-                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <img src="gambar/12.jpeg" alt="Hair Pin">
+                <h2>Hair Pin Series</h2>
+                <p> Rp. 10.000</p>
+                <p class="description">Koleksi baru dari clover keychain. Hair pin imut cocok untuk kamu yang ingin tampil modis.</p>
+                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a> 
+                <button class="cart-icon-button" onclick="addToCart(1, 'Hair Pin', 10000)">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
         </div>
              <div class="product">
-                <img src="gambar/2.jpg" alt="Inisial Keychain">
+                <img src="gambar/13.jpeg" alt="Cake Keychain">
+                <h2>Cake Series Keychain</h2>
+                <p> Rp. 7000</p>
+                <p class="description">Cake Saries cocok jadi hadiah untuk besti tercinta. Cantumkan dalam note untuk detail order.</p>
+                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(2, 'Cake Keychain', 7000)"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+             <div class="product">
+                <img src="gambar/14.jpeg" alt="Anggrek Hair Pin">
+                <h2>Anggrek Hair Pin</h2>
+                <p> Rp. 15.000</p>
+                <p class="description">Bunga Anggrek yang cantik nan elegan bikin kamu makin menawan dan anggunly.</p>
+                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(3, 'Anggrek Hair Pin', 15000)"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+             <div class="product">
+                <img src="gambar/15.jpeg" alt="Miror Keychain">
+                <h2>Miror Keychain</h2>
+                <p> Rp. 14.000</p>
+                <p class="description">Ganci multi fungsi, selain praktis tapi juga menambah keindahan tas kamu.</p>
+                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(4, 'Miror Keychain', 14000)"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+             <div class="product">
+                <img src="gambar/16.jpg" alt="clover Keychain">
+                <h2>Clover Keychain</h2>
+                <p> Rp. 3000</p>
+                <p class="description">Clover pembawa keberuntungan, ayo segera miliki!</p>
+                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(5, 'Clover Keychain', 3000)"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+             <div class="product">
+                <img src="gambar/17.jpeg" alt="Inisial Keychain">
                 <h2>Inisial Keychain</h2>
                 <p> Rp. 6000</p>
+                <p class="description">Ayo reques inisial gebetan kalian, dijamin kokoh! Ukuran 7x6</p>
                 <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(6, 'Inisial Keychain', 6000)"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
              <div class="product">
-                <img src="gambar/7.jpg" alt="Chery Keychain">
-                <h2>Chery Keychain</h2>
-                <p> Rp. 4000</p>
-                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
-        </div>
-             <div class="product">
-                <img src="gambar/4.jpg" alt="Clover Keychain">
-                <h2>Clover Keychain</h2>
-                <p> Rp. 4000</p>
-                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
-        </div>
-             <div class="product">
-                <img src="gambar/6.jpg" alt="Pretzel Keychain">
-                <h2>Pretzel Keychain</h2>
+                <img src="gambar/18.jpeg" alt="Aneka Keychain">
+                <h2>Aneka Keychain</h2>
                 <p> Rp. 3000</p>
+                <p class="description">Pita, Chery, Sunflower Keychain. Dijual satuan, Cantumkan dalam note untuk detail order.</p>
                 <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(7, 'Aneka Keychain', 3000)"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
              <div class="product">
-                <img src="gambar/8.jpg" alt="Strawbery Keychain">
-                <h2>Strawbery Keychain</h2>
-                <p> Rp. 6000</p>
-                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
-        </div>
-             <div class="product">
-                <img src="gambar/9.jpg" alt="Daisy Keychain">
-                <h2>Daisy Keychain</h2>
+                <img src="gambar/19.jpeg" alt="Aneka Keychain">
+                <h2>Aneka Keychain</h2>
                 <p> Rp. 3000</p>
+                <p class="description">Tingbel, Pumkin, Tulip, Clover Keychain, Cantumkan dalam note untuk detail order. </p>
                 <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
-        </div>
-             <div class="product">
-                <img src="gambar/10.jpg" alt="Pumpkin Keychain">
-                <h2>Pumpkin Keychain</h2>
-                <p> Rp. 3000</p>
-                <a href="https://wa.me/qr/3DNOSOIAEUKHO1" class="buy-button" >Beli</a>
+                <button class="cart-icon-button" onclick="addToCart(8, 'Aneka Keychain', 3000)"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
        </section>
-      </section>
+      </section>   
+
+ <!--keranjang-->     
+    <section id="cart-section" class="cart-section section" style="display: none;">
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            Total: <span id="cart-total">Rp 0</span>
+        </div>
+    </section>
 
 <!-- Kontak -->
  <section id="kontak" class="about container" style="text-align: center;">
     <h3>Kontak</h3>
     <p>Pemesanan silahkan hubungi kami melalui WhatsApp</p>
-    <p>note : Semua Produk Pre-order</p>
-    <p>
-        <a href="https://wa.me/qr/3DNOSOIAEUKHO1"><i class="fa-brands fa-whatsapp"></i></a> WhatsApp</li>
-    </p>
+    <p>note : Semua Produk Pre-order, bisa reques bentuk dan warna</p>
+    <p>alamat : jl.Garunggang Kulon No.91/65, RT.07 RW.12</p>
+        <a href="https://wa.me/qr/3DNOSOIAEUKHO1"><i class="fa-brands fa-whatsapp"></i></a> 087840336826</li>
+        <a href="mailto:lani.apriliani321@gmail.com"><i class="fa-solid fa-envelope"></i></a> lani.apriliani321@gmail.com</li>
  </section>
 
  <!-- Footer -->
@@ -130,14 +165,104 @@
     </div>
  </footer>
 
- <!-- JS -->
-<script>
+ <!--JS-->
+ <script>
   const toggleBtn = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
   });
+
+  const navItems = navLinks.querySelectorAll('a');
+  navItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+});  
+</script>
+
+<!--Keranjang-->
+<script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>Harga: Rp ${item.price.toLocaleString()}</p>
+                    <p>Jumlah: ${item.quantity}</p>
+                    <button class="remove" onclick="removeFromCart(${item.id})">Hapus</button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartTotal.textContent = `Rp ${total.toLocaleString()}`;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function addToCart(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            updateCartDisplay();
+            alert(`${name} ditambahkan ke keranjang!`);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartDisplay();
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Initialize cart display on page load
+        updateCartDisplay();
+    </script>
+
+    <script>
+  const cartSection = document.getElementById("cart-section");
+  const openCartBtn = document.getElementById("open-cart");
+
+  openCartBtn.addEventListener("click", () => {
+    if (cartSection.style.display === "none" || cartSection.style.display === "") {
+      cartSection.style.display = "block";
+      cartSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      cartSection.style.display = "none";
+    }
+  });
+</script>
+
+<script>
+  function showSection(id) {
+    const section = document.getElementById(id);
+    if (section.style.display === "none" || section.style.display === "") {
+      section.style.display = "block";
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      section.style.display = "none";
+    }
+  }
 </script>
 
 </body>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <h1><a href="index.html">Clover Keychain</a></h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Keranjang Anda</h2>
+    <ul id="cart-items"></ul>
+    <div class="total">
+      <p id="cart-total">Total Item: 0</p>
+      <p id="cart-price" data-total="0">Total Harga: Rp. 0</p>
+    </div>
+    <button onclick="checkout()">Checkout Sekarang</button>
+    <br><br>
+    <a href="index.html">← Kembali ke Produk</a>
+  </main>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function formatRupiah(num) {
+      return 'Rp ' + num.toLocaleString('id-ID');
+    }
+
+    function updateCartDisplay() {
+      const list = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+      const priceEl = document.getElementById('cart-price');
+
+      list.innerHTML = '';
+      let totalItem = 0;
+      let totalPrice = 0;
+
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <div class="item-info">
+            <span><strong>${item.name}</strong></span>
+            <span>Jumlah: ${item.quantity}</span>
+            <span>Harga: ${formatRupiah(item.price)}</span>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Hapus</button>
+        `;
+        list.appendChild(li);
+
+        totalItem += item.quantity;
+        totalPrice += item.price * item.quantity;
+      });
+
+      totalEl.textContent = `Total Item: ${totalItem}`;
+      priceEl.textContent = `Total Harga: ${formatRupiah(totalPrice)}`;
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function removeItem(index) {
+      if (confirm('Hapus item ini dari keranjang?')) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+      }
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert('Keranjang Anda kosong!');
+        return;
+      }
+      alert('Terima kasih telah berbelanja! Pesanan Anda sedang diproses.');
+      localStorage.removeItem('cart');
+      cart = [];
+      updateCartDisplay();
+    }
+
+    window.onload = updateCartDisplay;
+  </script>
+
+</body>
+</html>
